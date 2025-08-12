@@ -5,56 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rohit Mittal | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-in { animation: fadeIn 1s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hover-rise:hover {
+      transform: translateY(-4px);
+      transition: all 0.3s ease-in-out;
+    }
+    /* Navbar shadow + blur effect */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gradient-to-br from-purple-100 via-white to-blue-100 text-gray-800 font-sans">
+
+  <!-- Floating Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass-nav shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+      <a href="#hero" class="text-xl font-bold text-indigo-600">Rohit Mittal</a>
+      <div class="space-x-6 text-gray-700 font-medium">
+        <a href="#about" class="hover:text-indigo-600">About</a>
+        <a href="#skills" class="hover:text-indigo-600">Skills</a>
+        <a href="#experience" class="hover:text-indigo-600">Experience</a>
+        <a href="#projects" class="hover:text-indigo-600">Projects</a>
+        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero -->
-  <section class="bg-white shadow-lg p-8 text-center">
-    <h1 class="text-4xl font-bold">Rohit Mittal</h1>
-    <p class="text-lg mt-2 italic">Turning coffee into code and ideas into impact.</p>
-    <p class="mt-1 text-gray-600">SDE II at Expedia | Ex-Oracle | Ex-Samsung</p>
+  <section id="hero" class="fade-in bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white p-12 text-center shadow-lg pt-28">
+    <h1 class="text-5xl font-extrabold tracking-tight">Rohit Mittal</h1>
+    <p class="text-xl mt-3 italic">Turning coffee into code and ideas into impact.</p>
+    <p class="mt-2">SDE II at Expedia | Ex-Oracle | Ex-Samsung</p>
   </section>
 
   <!-- About -->
-  <section class="max-w-4xl mx-auto p-8">
-    <h2 class="text-2xl font-bold mb-4">About Me</h2>
-    <p>Hi, I’m Rohit 👋 — a full-stack developer who thrives at the intersection of creativity and technology. Over the last 5+ years, I’ve crafted high-impact software solutions, from intuitive mobile apps to scalable enterprise systems. I speak JavaScript, React, Node.js, Kotlin, SQL, Java — and a little bit of sarcasm.</p>
+  <section id="about" class="fade-in max-w-4xl mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4 text-indigo-600">About Me</h2>
+    <p class="leading-relaxed text-lg">Hi, I’m Rohit 👋 — a full-stack developer who thrives at the intersection of creativity and technology. Over the last 5+ years, I’ve crafted high-impact software solutions, from intuitive mobile apps to scalable enterprise systems. I speak JavaScript, React, Node.js, Kotlin, SQL, Java — and a little bit of sarcasm.</p>
   </section>
 
   <!-- Skills -->
-  <section class="bg-white max-w-4xl mx-auto p-8 shadow-md mt-6">
-    <h2 class="text-2xl font-bold mb-4">Skills</h2>
-    <ul class="list-disc list-inside">
-      <li>Frontend: React, Redux, HTML5, CSS3</li>
-      <li>Backend: Node.js, MongoDB, Kotlin, GraphQL, SQL, Java</li>
-      <li>Other: AWS, REST API design, Microservices, Android Development</li>
-      <li>Methodologies: Agile/Scrum, Git</li>
-    </ul>
+  <section id="skills" class="fade-in bg-white max-w-4xl mx-auto p-8 shadow-lg rounded-2xl mt-6 hover-rise">
+    <h2 class="text-3xl font-bold mb-4 text-purple-600">Skills</h2>
+    <div class="grid grid-cols-2 gap-4 text-lg">
+      <ul class="list-disc list-inside">
+        <li>Frontend: React, Redux, HTML5, CSS3</li>
+        <li>Backend: Node.js, MongoDB, Kotlin, GraphQL</li>
+      </ul>
+      <ul class="list-disc list-inside">
+        <li>Cloud: AWS</li>
+        <li>Other: REST API design, Microservices, Android</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Experience -->
-  <section class="max-w-4xl mx-auto p-8">
-    <h2 class="text-2xl font-bold mb-4">Experience</h2>
-    <div>
-      <h3 class="font-semibold">SDE II — Expedia Group</h3>
-      <p class="text-gray-600 text-sm">Oct 2022 – Present</p>
-      <p>Building and optimizing large-scale systems, enhancing customer booking and travel experiences.</p>
-    </div>
-    <div class="mt-4">
-      <h3 class="font-semibold">Application Engineer — Oracle</h3>
-      <p class="text-gray-600 text-sm">Nov 2020 – Oct 2022</p>
-      <p>Worked on enterprise-grade applications with MySQL, Java, and frontend tech.</p>
-    </div>
-    <div class="mt-4">
-      <h3 class="font-semibold">Engineer — Samsung Electronics</h3>
-      <p class="text-gray-600 text-sm">Jun 2019 – Sep 2020</p>
-      <p>Developed AI-powered imaging solutions. Winner of Samsung AI Hackathon 2020. Filed patent IN 202011037917.</p>
+  <section id="experience" class="fade-in max-w-4xl mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4 text-pink-600">Experience</h2>
+    <div class="space-y-4">
+      <div class="p-4 bg-white rounded-xl shadow hover-rise">
+        <h3 class="font-semibold text-lg">SDE II — Expedia Group</h3>
+        <p class="text-gray-600 text-sm">Oct 2022 – Present</p>
+        <p>Building and optimizing large-scale systems, enhancing customer booking and travel experiences.</p>
+      </div>
+      <div class="p-4 bg-white rounded-xl shadow hover-rise">
+        <h3 class="font-semibold text-lg">Application Engineer — Oracle</h3>
+        <p class="text-gray-600 text-sm">Nov 2020 – Oct 2022</p>
+        <p>Worked on enterprise-grade applications with MySQL, Java, and frontend tech.</p>
+      </div>
+      <div class="p-4 bg-white rounded-xl shadow hover-rise">
+        <h3 class="font-semibold text-lg">Engineer — Samsung Electronics</h3>
+        <p class="text-gray-600 text-sm">Jun 2019 – Sep 2020</p>
+        <p>Developed AI-powered imaging solutions. Winner of Samsung AI Hackathon 2020. Filed patent IN 202011037917.</p>
+      </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section class="bg-white max-w-4xl mx-auto p-8 shadow-md mt-6">
-    <h2 class="text-2xl font-bold mb-4">Projects</h2>
-    <ul class="list-disc list-inside">
+  <section id="projects" class="fade-in bg-white max-w-4xl mx-auto p-8 shadow-lg rounded-2xl mt-6 hover-rise">
+    <h2 class="text-3xl font-bold mb-4 text-indigo-600">Projects</h2>
+    <ul class="list-disc list-inside space-y-2 text-lg">
       <li>Trivia Nest — Multiplayer quiz app with practice and random modes.</li>
       <li>Settle Up Expense Manager — Tracks trip and daily expenses with ease.</li>
       <li>App Usage Statistics — Monitors and limits app usage with analytics.</li>
@@ -64,10 +102,16 @@
   </section>
 
   <!-- Contact -->
-  <section class="max-w-4xl mx-auto p-8 text-center">
-    <h2 class="text-2xl font-bold mb-4">Contact</h2>
-    <p>Email: <a href="mailto:rohit@example.com" class="text-blue-600">rohit@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/rohit-mittal-3680b3127/" class="text-blue-600">linkedin.com/in/rohit-mittal-3680b3127</a></p>
+  <section id="contact" class="fade-in max-w-4xl mx-auto p-8 text-center">
+    <h2 class="text-3xl font-bold mb-4 text-purple-600">Contact</h2>
+    <p class="text-lg">Email: <a href="mailto:rohit@example.com" class="text-blue-600 underline">rohit@example.com</a></p>
+    <p class="text-lg">LinkedIn: <a href="https://www.linkedin.com/in/rohit-mittal-3680b3127/" class="text-blue-600 underline">linkedin.com/in/rohit-mittal-3680b3127</a></p>
   </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-center p-4 mt-8">
+    <p>&copy; 2025 Rohit Mittal. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
